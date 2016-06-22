@@ -7,8 +7,8 @@ describe("Singly Linked List", function() {
     list = new LinkedList();
   });
 
-  describe('clear', ()=>{
-    it('List should have length 0', ()=>{
+  describe('clear', function(){
+    it('List should have length 0', function(){
       list.clear();
       expect(list.length).to.equal(0);
     });
@@ -49,7 +49,7 @@ describe("Singly Linked List", function() {
     });
   });
 
-  xdescribe("unshift", function() {
+  describe("unshift", function() {
     it("adds a value to the front of the list", function() {
       list.push(4);
       list.unshift(1);
@@ -62,7 +62,7 @@ describe("Singly Linked List", function() {
 
   });
 
-  xdescribe("shift", function() {
+  describe("shift", function() {
     it("removes a value from the front of the list", function() {
       list.push(4).push(2);
       expect(list.length).to.equal(2);
@@ -73,7 +73,7 @@ describe("Singly Linked List", function() {
     });
   });
 
-  xdescribe("get", function() {
+  describe("get", function() {
     it("get a value from the list given an index", function() {
       list.push(0).push(1).push(2).push(3).push(4);
       expect(list.length).to.equal(5);
@@ -85,7 +85,7 @@ describe("Singly Linked List", function() {
     });
   });
 
-  xdescribe("set", function() {
+  describe("set", function() {
     it("set a value in the list given an index", function() {
       list.push(0).push(1).push(2).push(3).push(4);
       expect(list.length).to.equal(5);
@@ -98,7 +98,7 @@ describe("Singly Linked List", function() {
     });
   });
 
-  xdescribe("remove", function() {
+  describe("remove", function() {
     it("removes the first element in a list of size 1", function() {
       list.push(1);
       expect(list.length).to.equal(1);
@@ -134,7 +134,7 @@ describe("Singly Linked List", function() {
     });
   });
 
-  xdescribe("reverse", function(){
+  describe("reverse", function(){
     it("should reverse the link list", function(){
       list.push(1).push(2).push(3).push(4).push(5);
       expect(list.length).to.equal(5);
@@ -144,4 +144,13 @@ describe("Singly Linked List", function() {
       expect(list.reverse().get(1)).to.equal(6);      
     });
   });
+
+  xdescribe("reverseRecursive", function(){
+    it("should reverse the link list", function(){
+      list.push(1).push(2).push(3).push(4).push(5);
+      expect(list.length).to.equal(5);
+      expect(list.reverseRecursive().get(1)).to.equal(4);
+    });
+  });
+
 });

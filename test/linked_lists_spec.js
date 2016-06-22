@@ -145,7 +145,7 @@ describe("Singly Linked List", function() {
     });
   });
 
-  xdescribe("reverseRecursive", function(){
+  describe("reverseRecursive", function(){
     it("should reverse the link list", function(){
       list.push(1).push(2).push(3).push(4).push(5);
       expect(list.length).to.equal(5);

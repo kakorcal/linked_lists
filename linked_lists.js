@@ -148,4 +148,31 @@ LinkedList.prototype.reverse = function(){
   return this;
 };
 
+LinkedList.prototype.reverseRecursive = function(){
+  // empty list
+  if(!this.length) return;
+  let currNode = this.head.next;
+  let prevNode = this.head;
+  let nextNode = currNode.next;
+  this.head.next = null;
+  this.tail = this.head;
+  // internal recursive function
+  function reverse(prev, curr, next){
+    // base case. if next is null, set head to be prev
+    if(!next){
+      curr.next = prev;
+      this.head = curr;
+      return this;
+    }else{
+      currNode.next = prevNode;
+      prevNode = currNode;
+      currNode = nextNode;
+      nextNode = currNode.next;
+      return reverse.call(this, prevNode, currNode, nextNode);
+    }
+  }
+
+  return reverse.call(this, prevNode, currNode, nextNode);
+};
+
 module.exports = LinkedList;

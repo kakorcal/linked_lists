@@ -130,20 +130,19 @@ LinkedList.prototype.reverse = function(){
   // empty list
   if(!this.length) return;
   // loop until node before tail
-  let counter = 0;
   let currNode = this.head.next;
   let prevNode = this.head;
   this.head.next = null;
   this.tail = this.head;
   while(currNode){
     // create temporary var to store next node
-    let temp = currNode.next;
+    let next = currNode.next;
     // pointer is now on prevNode
     currNode.next = prevNode;
     // 'increment' the prevNode
     prevNode = currNode;
     // 'increment' the currNode 
-    currNode = temp;
+    currNode = next;
   }
   this.head = prevNode;
   return this;

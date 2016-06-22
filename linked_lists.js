@@ -175,4 +175,22 @@ LinkedList.prototype.reverseRecursive = function(){
   return reverse.call(this, prevNode, currNode, nextNode);
 };
 
+
+// SinglyLinkedList.prototype.reverseRecursivelyUtility = function(current,previous){
+//   if(!current.next){
+//     this.tail = this.head
+//     this.head = current;
+//     current.next = previous;
+//     return this;
+//   }
+//   next = current.next
+//   current.next = previous;
+//   return this.reverseRecursivelyUtility(next,current)
+// }
+
+// SinglyLinkedList.prototype.reverseRecursively = function() {
+//   if(!this.head) return this;  
+//   return this.reverseRecursivelyUtility(this.head,null)
+// };
+
 module.exports = LinkedList;

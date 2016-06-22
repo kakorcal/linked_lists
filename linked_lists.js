@@ -156,9 +156,9 @@ LinkedList.prototype.reverseRecursive = function(){
   let nextNode = currNode.next;
   this.head.next = null;
   this.tail = this.head;
-  // internal recursive function
+  // internal recursive function.
   function reverse(prev, curr, next){
-    // base case. if next is null, set head to be prev
+    // base case. if next is null, set head to be curr
     if(!next){
       curr.next = prev;
       this.head = curr;
